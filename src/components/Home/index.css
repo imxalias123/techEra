@@ -1,0 +1,35 @@
+.heading {
+  color: #1e293b;
+  font-size: 40px;
+  font-family: 'roboto';
+}
+.home-container {
+  padding-left: 70px;
+  padding-top: 50px;
+}
+ul {
+  padding-left: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.loader {
+  text-align: center;
+}
+.retry {
+  background-color: #4656a1;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px;
+}
+.heading-failure {
+  color: #4656a1;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'roboto';
+}
