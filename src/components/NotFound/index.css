@@ -1,0 +1,18 @@
+.not-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+.not-found-img {
+  width: 500px;
+}
+
+.not-h1 {
+  color: #1e293b;
+}
+.not-p {
+  color: #475569;
+  font-size: ;
+}

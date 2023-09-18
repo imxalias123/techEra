@@ -25,6 +25,35 @@ class Home extends Component {
     this.getApiRequest()
   }
 
+  getApiRequest = async () => {
+    this.setState({
+      apiStatus: apiStatusConstants.inProgress,
+    })
+    const url = 'https://apis.ccbp.in/te/courses'
+    const options = {
+      method: 'GET',
+    }
+    const response = await fetch(url, options)
+    console.log(response)
+    if (response.ok === true) {
+      const data = await response.json()
+      console.log(data)
+      const updatedData = data.courses.map(each => ({
+        id: each.id,
+        logoUrl: each.logo_url,
+        name: each.name,
+      }))
+      this.setState({
+        list: updatedData,
+        apiStatus: apiStatusConstants.success,
+      })
+    } else {
+      this.setState({
+        apiStatus: apiStatusConstants.failure,
+      })
+    }
+  }
+
   renderFailure = () => (
     <div className="failure-container">
       <img
@@ -60,35 +89,6 @@ class Home extends Component {
       <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
     </div>
   )
-
-  getApiRequest = async () => {
-    this.setState({
-      apiStatus: apiStatusConstants.inProgress,
-    })
-    const url = 'https://apis.ccbp.in/te/courses'
-    const options = {
-      method: 'GET',
-    }
-    const response = await fetch(url, options)
-    console.log(response)
-    if (response.ok === true) {
-      const data = await response.json()
-      console.log(data)
-      const updatedData = data.courses.map(each => ({
-        id: each.id,
-        logoUrl: each.logo_url,
-        name: each.name,
-      }))
-      this.setState({
-        list: updatedData,
-        apiStatus: apiStatusConstants.success,
-      })
-    } else {
-      this.setState({
-        apiStatus: apiStatusConstants.failure,
-      })
-    }
-  }
 
   renderStatus = () => {
     const {apiStatus} = this.state

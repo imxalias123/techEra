@@ -1,0 +1,16 @@
+.detailed-view-container {
+  display: flex;
+  margin: 70px;
+  box-shadow: 1px 1px 1px 5px #555;
+}
+.text {
+  padding-left: 30px;
+}
+.heading-detail {
+  color: #1e293b;
+  font-size: ;
+}
+.para-detail {
+  color: #475569;
+  font-size: 20px;
+}

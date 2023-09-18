@@ -4,11 +4,13 @@ import {Link} from 'react-router-dom'
 const EachCourse = props => {
   const {details} = props
   const {id, name, logoUrl} = details
+
   return (
-    <Link to={`/${id}`} className="link">
+    <Link to={`courses/${id}`} className="link">
       <li>
-        <img src={logoUrl} alt={name} className="img" />
-        <h1 className="logo-h1">{name}</h1>
+        <img alt="name" src={logoUrl} className="img" />
+
+        <p className="logo-h1">{name}</p>
       </li>
     </Link>
   )
